@@ -466,7 +466,7 @@
 }
 
 /* Адаптивность для планшетов */
-@media (max-width: 480px) {
+@media (max-width: 393px) {
   .main_container {
     position: relative;
     width: 100%;
@@ -501,13 +501,13 @@
   }
 
   .journeyP {
-    top: 44%;
-    left: 12.5%;
+    top: 43%;
+    left: 12%;
     font-size: 0.6rem;
   }
 
   .toBegin {
-    top: 45%;
+    top: 42%;
     left: 1%;
     width: 19%;
     height: 35px;
@@ -515,8 +515,8 @@
   }
 
   .gradientLine {
-    top: 47%;
-    left: 25.5%;
+    top: 43%;
+    left: 27.5%;
     width: 24%;
     height: 2px;
   }
@@ -529,8 +529,8 @@
 
   .mars {
     position: absolute;
-    top: 55%; /* Центрируем по вертикали */
-    left: 50%; /* Центрируем по горизонтали */
+    top: 53%; /* Центрируем по вертикали */
+    left: 52%; /* Центрируем по горизонтали */
     transform: translate(-50%, -50%); /* Центрируем изображение по обоим осям */
     width: 130%; /* Масштабируем изображение по ширине */
     max-width: 1200px; /* Ограничиваем максимальную ширину */
@@ -563,7 +563,7 @@
   }
 
   .gridContent {
-    top: 35%;
+    top: 33%;
     right: 5%;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -572,7 +572,7 @@
   .headeJourney {
     font-size: 1rem;
     position: absolute;
-    top: 42%;
+    top: 41%;
     left: 15%;
   }
 
