@@ -27,6 +27,7 @@ const Spacex = () => {
       <h1 className="headeJourney">ПУТЕШЕСТВИЕ</h1>
       <p className="journeyP">на красную планету</p>
       <img src={ImageMars} alt="Mars" className="mars"/>
+      <div className="black"></div>
       <img src={ImgSpace} alt='space' className="spaceBackground"/>
       <div className="gridContent">
         <div className="one box">

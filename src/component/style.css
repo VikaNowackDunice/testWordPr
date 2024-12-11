@@ -282,6 +282,16 @@
   ); /* Градиент */
 }
 
+.black {
+  position: absolute; /* Абсолютное позиционирование */
+  top: 100px; /* Привязка к верхнему краю */
+  left: 0; /* Привязка к левому краю */
+  width: 100%; /* Растянуть на всю ширину */
+  height: 100%; /* Растянуть на всю высоту экрана */
+  background-color: #12161ff6; /* Прозрачный черный */
+  z-index: -1; /* Поместить под другой контент */
+}
+
 /* Адаптивность для планшетов */
 @media (max-width: 1024px) {
   .header {
@@ -446,6 +456,133 @@
     font-size: 0.7rem; /* Уменьшаем размер шрифта для планшетов */
     margin-left: 70px; /* Сдвигаем навигацию ближе к логотипу */
     margin-right: 10px; /* Отступ справа от меню */
+    max-width: calc(100% - 160px); /* Ограничиваем ширину навигации */
+  }
+
+  .menu {
+    width: 50px; /* Уменьшаем размер иконки меню */
+    height: 50px;
+  }
+}
+
+/* Адаптивность для планшетов */
+@media (max-width: 360px) {
+  .main_container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Высота экрана */
+    margin-top: 0;
+  }
+
+  .black {
+    height: 100vh; /* Обеспечить растяжение на всю высоту экрана для телефонов */
+  }
+
+  .starsBackground {
+    position: absolute;
+    width: 100%;
+    height: 115vh;
+    object-fit: cover; /* Изображение масштабируется без искажения */
+    z-index: -1; /* Устанавливаем фон позади содержимого */
+  }
+
+  .spaceBackground {
+    position: absolute;
+    width: 105%;
+    margin-top: 25%;
+    height: auto; /* Высота экрана */
+    object-fit: cover; /* Изображение масштабируется без искажения */
+    z-index: 2;
+    opacity: 0.8; /* Прозрачность верхней картинки */
+  }
+
+  .header {
+    padding: 10px 15px; /* Уменьшаем паддинг на мобильных */
+  }
+
+  .journeyP {
+    top: 40%;
+    left: 14.5%;
+    font-size: 0.6rem;
+  }
+
+  .toBegin {
+    top: 39%;
+    left: 1%;
+    width: 20%;
+    height: 35px;
+    font-size: 0.5rem;
+  }
+
+  .gradientLine {
+    top: 41%;
+    left: 29.25%;
+    width: 20%;
+    height: 2px;
+  }
+
+  .gradientLine::after {
+    right: -5px; /* Размещаем точку в конце линии */
+    width: 4px; /* Размер точки */
+    height: 4px; /* Размер точки */
+  }
+
+  .mars {
+    position: absolute;
+    top: 55%; /* Центрируем по вертикали */
+    left: 50%; /* Центрируем по горизонтали */
+    transform: translate(-50%, -50%); /* Центрируем изображение по обоим осям */
+    width: 130%; /* Масштабируем изображение по ширине */
+    max-width: 1200px; /* Ограничиваем максимальную ширину */
+    object-fit: contain; /* Сохраняем пропорции при изменении размера */
+    z-index: 4; /* Устанавливаем Марс поверх остальных элементов */
+  }
+
+  .logoSpace {
+    width: 40%; /* Логотип занимает 40% экрана на мобильных */
+    max-width: 300px;
+    margin-left: 0;
+  }
+
+  .box {
+    width: 50px;
+    height: 50px;
+  }
+
+  .box p {
+    font-size: 0.5rem;
+  }
+
+  .box span {
+    font-size: 0.5rem;
+    margin-top: 1px;
+  }
+
+  .box h1 {
+    font-size: 1rem;
+  }
+
+  .gridContent {
+    top: 35%;
+    right: 5%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .headeJourney {
+    font-size: 1rem;
+    position: absolute;
+    top: 37%;
+    left: 18%;
+  }
+
+  .navigation {
+    justify-content: flex-start; /* Располагаем элементы ближе к логотипу */
+    gap: 8px; /* Уменьшаем промежутки между пунктами */
+    font-size: 0.5rem; /* Уменьшаем размер шрифта для планшетов */
+    margin-left: 10px; /* Сдвигаем навигацию ближе к логотипу */
+    display: flex;
+    flex-wrap: wrap;
     max-width: calc(100% - 160px); /* Ограничиваем ширину навигации */
   }
 
