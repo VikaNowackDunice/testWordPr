@@ -1,0 +1,456 @@
+.main_container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Высота экрана */
+  margin-top: 0;
+}
+
+.starsBackground {
+  position: absolute;
+  width: 100%;
+  height: 115vh;
+  object-fit: cover; /* Изображение масштабируется без искажения */
+  z-index: -1; /* Устанавливаем фон позади содержимого */
+}
+
+.spaceBackground {
+  position: absolute;
+  width: 100%;
+  height: 100vh; /* Высота экрана */
+  object-fit: cover; /* Изображение масштабируется без искажения */
+  z-index: 2;
+  opacity: 0.9; /* Прозрачность верхней картинки */
+}
+
+.headeJourney {
+  position: absolute;
+  top: 40%;
+  left: 22%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  font-weight: bold;
+  background: linear-gradient(
+    to right,
+    white 30%,
+    rgb(255, 115, 0)
+  ); /* Градиент от белого к оранжевому */
+  -webkit-background-clip: text; /* Для веб-китов */
+  background-clip: text; /* Для других браузеров */
+  color: transparent;
+  z-index: 3; /* Размещаем текст поверх второго фона */
+}
+
+.journeyP {
+  position: absolute;
+  top: 47%;
+  left: 15%;
+  font-weight: 600;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(to right, white 60%, rgb(238, 178, 129));
+  -webkit-background-clip: text; /* Для веб-китов */
+  background-clip: text; /* Для других браузеров */
+  color: transparent;
+  z-index: 3;
+  opacity: 0.8;
+}
+
+.gridContent {
+  display: grid;
+  grid-gap: 10px;
+  position: absolute;
+  grid-template-columns: repeat(2, 1fr);
+  top: 40%;
+  right: 4%;
+}
+
+.box {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: solid 0px transparent; /* Инициализация бордера */
+}
+
+.one {
+  background: linear-gradient(
+    to top left,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.two {
+  background: linear-gradient(
+    to top right,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.three {
+  background: linear-gradient(
+    to bottom left,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.fore {
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.box p {
+  font-size: 1.5rem;
+  color: #ffffff; /* Белый текст */
+  z-index: 2;
+  opacity: 0.8;
+}
+
+.box span {
+  font-size: 1.5rem;
+  color: #ffffff; /* Белый текст */
+  z-index: 2;
+  opacity: 0.8;
+  margin-top: -10px;
+}
+
+.box h1 {
+  color: #ffffff; /* Белый текст */
+  z-index: 2;
+  opacity: 0.8;
+  font-size: 3rem;
+}
+
+.box p,
+.box h1 {
+  margin: 0; /* Убираем отступы */
+  padding: 0; /* Убираем внутренние отступы */
+}
+
+.box:hover {
+  border: solid 3px white; /* Белая верхняя граница при наведении */
+  cursor: pointer; /* Указатель мыши */
+}
+
+.mars {
+  position: absolute;
+  top: 66%; /* Центрируем по вертикали */
+  left: 50.5%; /* Центрируем по горизонтали */
+  transform: translate(-50%, -50%); /* Центрируем изображение по обоим осям */
+  width: 100vw; /* Масштабируем изображение по ширине */
+  max-width: 180vh; /* Ограничиваем максимальную ширину */
+  object-fit: contain; /* Сохраняем пропорции при изменении размера */
+  z-index: 4; /* Устанавливаем Марс поверх остальных элементов */
+}
+
+.header {
+  width: 100%;
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  box-sizing: border-box; /* Учитываем паддинги в общей ширине */
+}
+
+.logoSpace {
+  width: 30%; /* Логотип занимает 15% экрана */
+  max-width: 500px; /* Ограничиваем максимальную ширину */
+  object-fit: contain;
+  z-index: 1;
+}
+
+.menu {
+  width: 10%; /* Уменьшаем размер иконки меню */
+  height: 100%;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between; /* Равномерное распределение элементов */
+  color: white;
+  font-size: 1rem;
+  flex-grow: 0.3; /* Навигация занимает оставшееся пространство */
+  max-width: calc(
+    100% - 500px
+  ); /* Ограничиваем максимальную ширину, чтобы она не выходила за пределы */
+  overflow: hidden; /* Обрезаем, если текст не помещается */
+  margin-left: 20px; /* Отступ слева от логотипа */
+}
+
+/* Стили для пунктов навигации */
+.navigation p {
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.toBegin {
+  position: relative;
+  top: 69%;
+  left: 15%;
+  width: 13%;
+  height: 35px;
+  background: transparent; /* Прозрачный фон */
+  color: white; /* Текст белый */
+  font-size: 14px;
+  text-align: center;
+  border: 1px solid transparent; /* Прозрачная граница */
+  border-image: linear-gradient(to bottom right, white 10%, rgb(0, 17, 255)) 1; /* Градиентная граница */
+  cursor: pointer;
+  z-index: 4;
+}
+
+.toBegin::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: -1.5px;
+  width: 3px;
+  height: 3px;
+  background: white;
+  border-radius: 50%; /* Круглая точка */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Эффект свечения */
+  z-index: 2;
+}
+
+.toBegin::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: -1.5px;
+  width: 3px;
+  height: 3px;
+  background: white;
+  border-radius: 50%; /* Круглая точка */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Эффект свечения */
+  z-index: 2;
+}
+
+.gradientLine {
+  content: "";
+  position: relative;
+  top: 70%;
+  left: 30%;
+  width: 20%;
+  height: 2px;
+  background: linear-gradient(
+    to left,
+    white,
+    rgba(255, 255, 255, 0.164)
+  ); /* Градиент */
+  z-index: 4;
+}
+
+.gradientLine::after {
+  content: "";
+  position: absolute;
+  right: -10px; /* Размещаем точку в конце линии */
+  top: 50%; /* Центрируем точку по вертикали */
+  transform: translateY(-50%); /* Выравнивание по центру */
+  width: 8px; /* Размер точки */
+  height: 8px; /* Размер точки */
+  border: solid 1px white;
+  background: rgba(255, 255, 255, 0.308); /* Цвет точки */
+  border-radius: 50%; /* Круглая форма */
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6); /* Лёгкое свечение */
+}
+
+.gradientLine::before {
+  content: "";
+  position: absolute;
+  left: -42px; /* Позиция начала линии */
+  top: -17px; /* Центрируем по вертикали родительского элемента */
+  transform: translateY(-50%) rotate(45deg); /* Смещение по центру и поворот */
+  width: 50px; /* Длина линии */
+  height: 1px; /* Толщина линии */
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0.363) 10%,
+    rgba(255, 255, 255, 0) 90%
+  ); /* Градиент */
+}
+
+/* Адаптивность для планшетов */
+@media (max-width: 1024px) {
+  .header {
+    padding: 10px 15px; /* Уменьшаем паддинг на мобильных */
+  }
+
+  .journeyP {
+    top: 50%;
+    left: 11.5%;
+  }
+
+  .toBegin {
+    top: 64%;
+    left: 8.5%;
+    width: 18%;
+    height: 35px;
+    font-size: 14px;
+  }
+
+  .gradientLine {
+    top: 66%;
+    left: 29.5%;
+    width: 20%;
+    height: 2px;
+  }
+
+  .mars {
+    position: absolute;
+    top: 65%; /* Центрируем по вертикали */
+    left: 50%; /* Центрируем по горизонтали */
+    transform: translate(-50%, -50%); /* Центрируем изображение по обоим осям */
+    width: 100%; /* Масштабируем изображение по ширине */
+    max-width: 1200px; /* Ограничиваем максимальную ширину */
+    object-fit: contain; /* Сохраняем пропорции при изменении размера */
+    z-index: 4; /* Устанавливаем Марс поверх остальных элементов */
+  }
+
+  .logoSpace {
+    width: 40%; /* Логотип занимает 40% экрана на мобильных */
+    max-width: 300px;
+    margin-left: 50px;
+  }
+
+  .box {
+    width: 120px;
+    height: 120px;
+  }
+
+  .box p {
+    font-size: 1.1rem;
+  }
+
+  .box span {
+    font-size: 1.1rem;
+  }
+
+  .box h1 {
+    font-size: 2.2rem;
+  }
+
+  .gridContent {
+    top: 45%;
+    right: 4%;
+  }
+
+  .headeJourney {
+    font-size: 2.5rem;
+    position: absolute;
+    top: 45%;
+    left: 18%;
+  }
+
+  .navigation {
+    justify-content: flex-start; /* Располагаем элементы ближе к логотипу */
+    gap: 8px; /* Уменьшаем промежутки между пунктами */
+    font-size: 1rem; /* Уменьшаем размер шрифта для планшетов */
+    margin-left: 80px; /* Сдвигаем навигацию ближе к логотипу */
+    max-width: calc(100% - 160px); /* Ограничиваем ширину навигации */
+  }
+
+  .menu {
+    width: 50px; /* Уменьшаем размер иконки меню */
+    height: 50px;
+  }
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .header {
+    padding: 10px 15px; /* Уменьшаем паддинг на мобильных */
+  }
+
+  .journeyP {
+    top: 55%;
+    left: 13.5%;
+    font-size: 0.9rem;
+  }
+
+  .gridContent {
+    top: 50%;
+    right: 0;
+  }
+
+  .toBegin {
+    top: 61%;
+    left: 6%;
+    width: 20%;
+    height: 30px;
+    font-size: 0.8rem;
+  }
+
+  .gradientLine {
+    top: 64%;
+    left: 29.25%;
+    width: 20%;
+    height: 2px;
+  }
+
+  .one,
+  .two,
+  .three,
+  .fore {
+    width: 100px;
+    height: 100px;
+  }
+
+  .box p,
+  .box span {
+    font-size: 0.8rem;
+  }
+
+  .box h1 {
+    font-size: 1.5rem;
+  }
+
+  .headeJourney {
+    font-size: 1.8rem;
+    position: absolute;
+    top: 50%;
+    left: 18%;
+  }
+
+  .logoSpace {
+    width: 40%; /* Логотип занимает 40% экрана на мобильных */
+    max-width: 200px;
+  }
+
+  .mars {
+    position: absolute;
+    top: 69%; /* Центрируем по вертикали */
+    left: 50%; /* Центрируем по горизонтали */
+    transform: translate(-50%, -50%); /* Центрируем изображение по обоим осям */
+    width: 100%; /* Масштабируем изображение по ширине */
+    max-width: 1200px; /* Ограничиваем максимальную ширину */
+    object-fit: contain; /* Сохраняем пропорции при изменении размера */
+    z-index: 4; /* Устанавливаем Марс поверх остальных элементов */
+  }
+
+  .navigation {
+    justify-content: flex-start; /* Располагаем элементы ближе к логотипу */
+    gap: 8px; /* Уменьшаем промежутки между пунктами */
+    font-size: 0.7rem; /* Уменьшаем размер шрифта для планшетов */
+    margin-left: 70px; /* Сдвигаем навигацию ближе к логотипу */
+    margin-right: 10px; /* Отступ справа от меню */
+    max-width: calc(100% - 160px); /* Ограничиваем ширину навигации */
+  }
+
+  .menu {
+    width: 50px; /* Уменьшаем размер иконки меню */
+    height: 50px;
+  }
+}
